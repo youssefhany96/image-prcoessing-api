@@ -48,9 +48,13 @@ const createThumbnailPath = async (
   const pathToImage = getInitialPath(filename)
   const pathToThumbnail = getThumbnailPath(`${width}-${height}-${filename}`)
 
-  await sharp(pathToImage)
-    .resize(width, height, { fit: 'contain' })
-    .toFile(pathToThumbnail)
+  try {
+    await sharp(pathToImage)
+      .resize(width, height, { fit: 'contain' })
+      .toFile(pathToThumbnail)
+  } catch {
+    console.log('Error occured while processing image');
+  }    
 }
 
 const imageProcess = async (
