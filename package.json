@@ -1,7 +1,7 @@
 {
-  "name": "ex-3",
+  "name": "imae-processing-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "API that is used for resizing images",
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/index.ts",
